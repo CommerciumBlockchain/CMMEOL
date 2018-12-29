@@ -1,0 +1,28 @@
+noinst_PROGRAMS += \
+  commercium/GenerateParams \
+  commercium/CreateJoinSplit
+
+# tool for generating our public parameters
+commercium_GenerateParams_SOURCES = commercium/GenerateParams.cpp
+commercium_GenerateParams_CPPFLAGS = $(AM_CPPFLAGS)
+commercium_GenerateParams_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+commercium_GenerateParams_LDADD = \
+  $(BOOST_LIBS) \
+  $(libzcash) \
+  $(LIBSNARK) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CRYPTO) \
+  $(libzcash_LIBS)
+
+# tool for profiling the creation of joinsplits
+commercium_CreateJoinSplit_SOURCES = commercium/CreateJoinSplit.cpp
+commercium_CreateJoinSplit_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+commercium_CreateJoinSplit_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+commercium_CreateJoinSplit_LDADD = \
+  $(LIBBITCOIN_COMMON) \
+  $(libzcash) \
+  $(LIBSNARK) \
+  $(LIBBITCOIN_UTIL) \
+  $(LIBBITCOIN_CRYPTO) \
+  $(BOOST_LIBS) \
+  $(libzcash_LIBS)

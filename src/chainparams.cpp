@@ -75,7 +75,7 @@ public:
         bip44CoinType = 767; // As registered in https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         consensus.fCoinbaseMustBeProtected = true;
         consensus.nSubsidySlowStartInterval = 8000;
-        consensus.nSubsidyHalvingInterval = 60 * 24 * 365 * 4;
+        consensus.nSubsidyHalvingInterval = 60 * 24 * 365;
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 4000;

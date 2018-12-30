@@ -2064,7 +2064,7 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex)
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
-    CAmount nSubsidy = 20 * COIN;
+    CAmount nSubsidy = 8 * COIN;
 
     if(NetworkIdFromCommandLine() != CBaseChainParams::MAIN)
     {
@@ -2089,7 +2089,10 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (halvings >= 64)
         return 0;
 
-    // Subsidy is cut in half every 60 * 24 * 365 * 4 blocks which will occur approximately every 4 years.
+    if ( nHeight == 1 )
+        return(26522230 * COIN); // Premine allocation for redistribution and development
+
+    // Subsidy is cut in half every 60 * 24 * 365 blocks which will occur approximately every year.
     nSubsidy >>= halvings;
     return nSubsidy;
 }

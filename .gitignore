@@ -76,9 +76,6 @@ src/univalue/gen
 *.lo
 *.la
 
-# Compilation
-Makefile
-
 # Unit-tests
 Makefile.test
 src/test/buildenv.py

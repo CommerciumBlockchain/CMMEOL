@@ -49,7 +49,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 
 static CBlock CreateGenesisBlock(uint32_t nTime, const uint256& nNonce, const std::vector<unsigned char>& nSolution, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Commercium19ac02b7cdc7d9e50c765bbc6146c3dd3adb8e93cf7cbe9bbc7ec290f8950182";
+    const char* pszTimestamp = "Commercium5b983e3f258fb03419cbb777bf926eacc96a9f1affd5294d11cf0c351a6785fd";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nSolution, nBits, nVersion, genesisReward);
 }
@@ -72,7 +72,7 @@ public:
     CMainParams() {
         strNetworkID = "main";
         strCurrencyUnits = "CMM";
-        bip44CoinType = 407; // As registered in https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+        bip44CoinType = 767; // As registered in https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         consensus.fCoinbaseMustBeProtected = true;
         consensus.nSubsidySlowStartInterval = 8000;
         consensus.nSubsidyHalvingInterval = 60 * 24 * 365 * 4;
@@ -81,7 +81,7 @@ public:
         consensus.nMajorityWindow = 4000;
         consensus.powLimit = uint256S("0007ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowAveragingWindow = 17;
-        consensus.nMasternodePaymentsStartBlock = 193200;
+        consensus.nMasternodePaymentsStartBlock = 1200;
         consensus.nMasternodePaymentsIncreasePeriod = 43200; // 1 month
 
         assert(maxUint/UintToArith256(consensus.powLimit) >= consensus.nPowAveragingWindow);
@@ -104,38 +104,38 @@ public:
         /**
          * The message start string should be awesome! Ⓢ❤
          */
-        pchMessageStart[0] = 0x24;
-        pchMessageStart[1] = 0xc8;
-        pchMessageStart[2] = 0x27;
-        pchMessageStart[3] = 0x64;
-        vAlertPubKey = ParseHex("04081b1f4f0d39e4bbb81c3fb654b0777b9ca5db9ef791e3b05c952d7b4cac2330a6e5d1cb5fcdc27124c387910dafa439e98848d3345a473c2390b33ceb234d7e");
-        nDefaultPort = 16113;
+        pchMessageStart[0] = 0xba;
+        pchMessageStart[1] = 0xad;
+        pchMessageStart[2] = 0xa5;
+        pchMessageStart[3] = 0x55;
+        vAlertPubKey = ParseHex("04388fbebb11406e3760971a8f21d410009df52c3c14aa6856626fccd815da45e3d3e3cf323a2087692b1ead972cf6300731f1f8cd3617b8d739526f213dd9f138");
+        nDefaultPort = 2018;
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
         newTimeRule = 246600;
         eh_epoch_1 = eh200_9;
-        eh_epoch_2 = eh144_5;
-        eh_epoch_1_endblock = 266000;
-        eh_epoch_2_startblock = 265983;
+        eh_epoch_2 = eh200_9;
+        eh_epoch_1_endblock = 1;
+        eh_epoch_2_startblock = 1;
 
         nMasternodeCountDrift = 0;
 
         genesis = CreateGenesisBlock(
-            1511111234,
-            uint256S("0x0000000000000000000000000000000000000000000000000000000000002d30"),
-            ParseHex("00833951120ce20e80739287814a9799eb622ff95803e03c9bf389586f89a320860fbefd368df25762c40f21266a0c57cab9fd8aa3a3fd537a0efb659b544a6035d414bd67fdd7621ac708a6f320edcba0708d401e2f1eb75ec9a9d65069f4475bafdf013a9a3aad42413963785c64fe094b1ff57d1d68718d7e2f96985b362d21c211d0aa8ae107e9dbf5e94816793214df8f502eaceecb9a1cf5eace2a7920d49f62a374f7104f09e2e05630e93d79dbb453a218bf83cebbd73b97cd22c42ba3a7dd1a633b66c24714dd3d50f9837904a126aefaffcf0b65758a02792e706bf42e63889c56213eca83a7f21cfb61588d25b2ff635b35ca4cd4db090c32f9398488a2ce533395e3b2b79702dfcab88f751d3e42c3eb47832b3702574fd1e965a1e1bd78a6f9187cea9b36e53947e65bb9f03de9d067352dfb58c54a39d550e4bae343dc8067608770a8ca51f4f8c9bd0148c91097f725e5cb69305b35c7dd21999bd045290d6751d7d4a5e293c74313ea68a0204aca1298e68a04b97576ceadd9f7d85c70df89cc361c78121bbd1107a671c60f5b008fd77882a0e231cabd5f328d9af30501e719438f1461e6afb0804c35437a6a98baf26418cce91c82cf9c11137e5502462cb299f966733c5723a3fa3252180577fc9b628558b9d864b1a9a60cc1621397105db4065db6d197a16ed22db297691a184e01ee18f1e1863a7bc1850846c34e9626abf736de1354dd7ac04ff04bfba7a5a5fdabf0c5419c77df594b0349d23e9d300951a47f79c6f3f1422eace598d3aa56c3c514e0d5f634e5e045fcc92ff1dac796be38640a578d0a27139c8175a782f93eced2c4d52374e0a053bdf3fe1ce06d01ef72e630f74a4219b749554597205bcee765d137c6d692e79afa5a759627c1d200ec28f75deb474af611b0d7157259ea3299df2672a1d7009c4deaff93c06b6be194eeb7a83e45c51830236b050562d9b88cc3e0f2f8b0c33f4c7eff538b7d825512d45c5b4052b2bf4bf7d28261d1e7216f6613eda41f625dc4edebb501c478223b9febe378ffbb6a79ac035ff8b1bbaa0d437993c36e0a38203e96a7de11221e80454d3dcdbbd6cf6b4431d2b1540dab85f6d25e052cee3662d86be5975a41ae8b612aca7ad694e0e713c4bbd8ef089314ecae72f600b8b57504dfde7b15020a6e269ecee4b4b44080596298dfacea335dfb40531f6f6c8a65aef5e12a67abadedf23a326eb2ca580e0c822e005a9e912891b4b980c3c615b2808f6cb30e31c730cc20f4d33ecc262db364610a3f533303330239189350446188326f23ab362f596113f4ba90b803a86954222fe14da26c124e41d13e8cbbbcc7bb8a0cbf27c28dd7e4eb01b9936134e5bf7a256199ed5f1d6ccbc4e98fe96fedf93a270f71bab7178b7c1528025893336f900a5cfc00828f6020eb6d0de0b4520c0826d133d46b2593cf5a31a45274768678077adda80af5a08d25d712dced9f963d456ed949ced4be32710ff8a20486fafd81ee8953fe2cbdaa27a9df5ff2c90d6685cf0dfb641bef3b4712f1db889a299876eda91e0bc7e3fb1710c1c94851e5e7c6585cd762faa58f115e1a536851984bad87c202e0490c9d3342dae5831436cbf31895a0c6da8a76c2e551fffaae32fdfaf9036c4a90b60cca9ac911d3b2aa43938d8a6f5da30f0f7fd6e2d8da2c11b41295a050b27709da7daefc3311289193e164377785fce6d76be7af1ba6eb9fdcb5298bce7c69d172cf7412b5700e7149a97a51bcd2f20616d8856a82814b7fb01582a9fd0e71f0c5b84c7918ae15776b75b2e5b2f4945f682af7faa5051aaf9c12b435d2461ee711a65bc29216c97501f5491b9fd823bdfe181214d6c4d63954d3bb270a9da8ad3fe40c"),
+            1546139923,
+            uint256S("0x0000000000000000000000000000000000000000000000000000000000000767"),
+            ParseHex("0023b23f1d0ca4068453e474d644343b1931be7209105c21f2900f3fc9ce03b411ce7d9406007d57d776043b56eddfd47c1fe51e80d343c79255890daf9c4f0da14892d7d44547504b219ed55083ba122778aa6906c02c83e861bb759c6d38af025fcaab8c16def1c80753c44a8a82d477e73fc304736ca1eaae5757f90c0cb3b8c818c571317f1912d8cc7a34f332229acdf151029fb3a1e92d07cff2294ccb732baf735a7bfd2603c90d58b696300ab37c543bc0a3753a65c65b9fb00e6a18e24e23c7c3cd02226c56f486e2c951d83f4210a5d333cc45424e79a8d86c6ee4d5d385851cebc24329de4204115f8d6d7cb45282579d16791179374003e82269e1de683ddb6be714f9dfe85ecad99c9c9807fdd64ad64453dce51e30a2455848c5463715107103f4d6ed10cf9143645020b375dbf27c54b9eef2fd3f16568ece5614a174a0d671f1cd4dd1ba3cf59e6f012bec66227710a1f1d5c253399c31f4ced1c730ac113672b085c64b518fa8e28cf3f0953ed8eb7e669814e24f4547c5fd370365a2998625c25cbe61ec5a074008a6c1a814fdff9b5035a27d636635a92e1d6dee1b723eb8eb09f23596a3e27370e91ecccccd98ce861c67e9e1b21434758282977bbe4e80f6292f1de5f21fa7d125d2db16bb141d635ac1ad5b2578082db1ac29ae1daa8d4ffdd9c52ba6fec156154fb33bfee33802725f0d48422868e8248488f7da7a57d0569fcd5d0b881b818f16b121ee17036019ad8eaa9bb158f6262d4a77b95ff50b7dd84e32d786d1d64a8eb157469b7b5605a8f9f5c627f43759e86f6c8466b31ffc027806881211e1a05009561348010042614e58aab3aa5736eb7f5dd19312cd1ae51892d9f31b7ee183d7dc3a06d261a115074b2848dc151be236c2019c79b2487b0988c38dd0c87731ce1452756255ac2de142bbf0490176297f2b6b4b5ba94b50487aeaa22c2fc410f8d404c840760d0ff723316f63d092be61ae9faf7972350826fac76f1dd0c8fe4811d72d306e607694c5609e0e9dc3f57a217491274df1764aba982d9523af8f36093e066e21c922a9b3cb12dbb02012756fcd183506490ba67dc5ac0bcbf8d9a609b5dc07e6985cf6718b213a02c6510c6da4ed7594eca3a816857083beaa4a3e221c05f061ca43fdeb74158bda6b62945c96a6db03ed4f012e49ee2485948372e267bfed14b4f7290d2600ee0104612bb9bc54d2ed405daa01c48b9dbc9f075494c7dc82bf9be6265b1f9c7fa15b0cbb1ea54027efffb030251a5f68d8b4598ef9d3ff2d553d09ad04db6e9f2c31e54fa165e1a0ba6a6f49fcf1f5e9d30845bbbae949742742af13ecfb5f678b0ea1f8aecc2306b68c49ec0bfb6cb24b40df77c6cf2e1c5f24ea3750d4cd03565ad5e0b315f66dbe2665aa1ed477e005716bf7a5eb8e05b4b2985932fb7ea25d2a3745f246110d597e9436878534299ca07d7cbe940938c2e117a0aceae9506fa9e53319cd0be925f36b147cd04320359baee2242f27c38ec3597d2fdf5e24251df76a0d805126c459a7a100c9ab0a35edd1435d341eef051d24baf8d7150186b90ed5555444ad424bf8156925118662b0be8d381bc97bf4b9d963fa0a256c5965bf291d77e12dcd4ca3ba31a806347acca6ecbe9934420663a4d7b6b73451c63cc50636bad48973a3d0970a4a0b339da62924cf82e929776775ecaf8d661f5f330ee3cf65f4d440e39af9549716767b5d50199217b21573b4f8d06969c7e49ac3e74f7566952693902fdb15cc5e89cb4e6f7688bba456ad2438ad6a384fa5341d1f372dad1d4163621e8612ade204d9faebf26e7e17e8424b525211b3721662a803a9d03dee45f049fd2417133e281c525d43b4f5a732c3ec5970d74c3597"),
             0x1f07ffff, 4, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00068b35729d9d2b0c294ff1fe9af0094740524311a131de40e7f705e4c29a5b"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa524d6679f759fd4ff2938a104d8488bc89858e0b9a19541bc4f1a6438d08f90"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00069418c278f4defdf27e431e82e35d640a6a95d9413bea1f80543c8eccb9a4"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2c27c06852f8cb8b5c68adeb46f87a7dbbc3db18094e2a44d5df690546e35fac"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        vSeeds.push_back(CDNSSeedData("dnsseed1.commercium.org", "dnsseed1.commercium.org")); //Commercium seed node
-        vSeeds.push_back(CDNSSeedData("dnsseed2.commercium.org", "dnsseed2.commercium.org")); //Commercium seed node
-        vSeeds.push_back(CDNSSeedData("dnsseed3.commercium.org", "dnsseed3.commercium.org")); //Commercium seed node
-        vSeeds.push_back(CDNSSeedData("abctoxyz.site", "dnsseed.abctoxyz.site")); //Commercium seed node
+        vSeeds.push_back(CDNSSeedData("seed04.commercium.net", "seed04.commercium.net")); //Commercium seed node
+        vSeeds.push_back(CDNSSeedData("seed03.commercium.net", "seed03.commercium.net")); //Commercium seed node
+        vSeeds.push_back(CDNSSeedData("seed02.commercium.net", "seed02.commercium.net")); //Commercium seed node
+        vSeeds.push_back(CDNSSeedData("seed01.commercium.net", "seed01.commercium.net")); //Commercium seed node
 
         // guarantees the first 2 characters, when base58 encoded, are "s1"
         base58Prefixes[PUBKEY_ADDRESS]     = {0x1C,0x28};
@@ -168,13 +168,11 @@ public:
 		fHeadersFirstSyncingActive = false;
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (0, consensus.hashGenesisBlock)
-            (23000, uint256S("0x000000006b366d2c1649a6ebb4787ac2b39c422f451880bc922e3a6fbd723616"))
-            (88000, uint256S("0x0000003ef01c0d1f954fdd738dac1b4f7191e6bee66ed8cb882d00d65fccd89b")),
-            1519442392,     // * UNIX timestamp of last checkpoint block
-            194812,         // * total number of transactions between genesis and last checkpoint
+            (0, consensus.hashGenesisBlock),
+            1546139923,     // * UNIX timestamp of last checkpoint block
+            0,              // * total number of transactions between genesis and last checkpoint
                             //   (the tx=... number in the SetBestChain debug.log lines)
-            1275            // * estimated number of transactions per day after checkpoint
+            1234            // * estimated number of transactions per day after checkpoint
                             //   total number of tx / (checkpoint block height / (24 * 24))
         };
 
@@ -246,15 +244,15 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nActivationHeight = 11200;
         consensus.nMasternodePaymentsStartBlock = 1500;
         consensus.nMasternodePaymentsIncreasePeriod = 200;
-		
+
 		// The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000000000d");
+        consensus.nMinimumChainWork = uint256S("0x0");
         pchMessageStart[0] = 0xfa;
         pchMessageStart[1] = 0x1a;
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0xbf;
         vAlertPubKey = ParseHex("044e7a1553392325c871c5ace5d6ad73501c66f4c185d6b0453cf45dec5a1322e705c672ac1a27ef7cdaf588c10effdf50ed5f95f85f2f54a5f6159fca394ed0c6");
-        nDefaultPort = 26113;
+        nDefaultPort = 12018;
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
         eh_epoch_1 = eh200_9;
@@ -262,21 +260,22 @@ public:
         eh_epoch_1_endblock = 7600;
         eh_epoch_2_startblock = 7583;
 
-		
+
     	genesis = CreateGenesisBlock(
-            1477774444,
-            uint256S("0000000000000000000000000000000000000000000000000000000000000009"),
-            ParseHex("005723faab5aab574962e0b981aa919d6d16fc4d820b208e873738535ddf58b70ef5d2d049c45af6a21923cd95321e4c7dddf83df3fa1e416bb9d2bedfe1923d51adb3a6dbfaf34cac34b9b151ade9e36354489d06448ab4f5fb6987e275a41b3563f88b8d519eedd20df637c11aa600b3fdf24533bc44e1eda9bb90e3890739d3c2c4518409144dc60d9e445eda06b99f2a3b56d9dcf25a6a337d6c8ec66e18475cc638f67fd58b0273d44321c61c4ac0feb2e3a86ddc3590773dfa00171a4bbd51ef1259ad86531151371bd5a2dd313c301a3920f226908ea57a3d025fc3c3ab2cc45f8e43b61e39b3d17468ffbf763875042b5a44ea4de232a83b0d9e5b2258c4a973bbb3b1145139e823299fbfbc1e2294dfde3e0e3a03a3c2d43b893d30991d567ae06240694712d4614ac91637e4c0fb6780e166645f6cf8520667c1dee4d3c350e0762b45d22e5e78743e6b04035365fb6d72e3cbfb14b055fb3d982e88087b196f210669c8d022f8efd451564783e2fd62d07ffb63df22a249faae2046415da5f5078ecf8e56d3217e5cf5277efcd5a78a4733c842a36bdff7c4cd07622b6a8c08ef8666cd865c0b3f17e0a79f1ea8f9991936538d6d151e66da665c65505f4a0c675f730ebd259bd55d22ad79446bd27a02ba7cb5b1a16c85cdb4ec121f542892170a638d140cb97b62ecb0b097f9e9fd2f53010361e4465cf98c9be8fcf2c023545cd73eb21a7ece26227a36b0dc670bbdb6554ba9def0d9601e1b4b1817381ba1f7978b66e2f624deec4239294bdd9d26592462f3a4712fe4d3c6a306602cfb2795d4dcbbf23609d791b8f64f458788af10e5e1b5f9788218e765e42018fd5cacd73f0b5fcf33d766e80f9d75f30f0f4a0be1efbaab779e29c88a24d641a7b2b96c09327d74169434defb29f0c37d15d7b996f84c2b62105e87e2010b9ec6e5c2d68521bde0efd8f0d7a2896e9575b257f9c3c88569fa25fbbe56d1a8fc3909cf217c45ea1ce691c0d52df541aae9158b9e496efe2a8f5d86402650361d3ae455dbb6eec4c0da48bbfae4c31943060e17c650e89178da95436229aed53d6e179bffb7ff2356feec3615ac40b0c5c28dc8abd534c3c1d351512a3f1ae2d719221bc5607451be63ef8db62c0f02743599bd2daa6db83bc6ec3475fc2873bfa2a23dffee01f0821b301a076d9744650abd7b6f81b95cfcd50c03bf2e7f791d70c3239ad490a0dddd21dacd779d0e175e577627eb89918c3be25aa17a8fb99a249e37981847e569758a3cf71c0365a2467eaa76ab5938954d0d1a7feec99c7137a63844430eec95819d51733baf4632d614feddc1ddfa7e249a995b562a33211586e30d38390e726722498dd679f567ee9d97c1437e5f3d2a06d73ed1568968ef4ec35cfaf4be9619233fc2c201ca9c1a359658c8e62c558a4c66c9ce7769f918fb4207236a769a7825eef5663ca27df7170751797917040fdfd865533929f1225188f8b27ca6916bbd6717061fb4fc079e6763413bd240d750da193a1793890e21d4a6ae5ec9ace86e9813451968575107278bdd2f3719ba88f7e6f0bb64ca64d653e99503bf75ff6eef30d6f46cdef56cb7d416b42ec2be3fdd0f9939fb9a476b4e7ff39c1b1782eec59381e4e269946f5d45210202a6ba57cedb8156f9d0c0ee1d0890a90775ec9808cd75d2824da3fed85436409569e05aab3a972fa107c65227588cefd2e2c24211004d33823fcc5b4a3b18a903a0e04a8b9fe856d43322d8b7edbaf351c34f10a7871a024681d50c15e2724fb55abe4c5e372e671eb5e17414dad4fef09e181775dc94de39967c06411654feec10493e768338333af19bdc89defd3f6a252a3d91ba4dde3be3a4d7634caeb77d058cfdb1c86e"),
+            1546144639,
+            uint256S("0000000000000000000000000000000000000000000000000000000000000231"),
+            ParseHex("0066c401f2a4df15ba0c85e8a7c3351987c05450ba0917b5e2d715a677e0f5c3dd8dee4e12197394d874007f28a3464881b87d8e67190bbfe6174d375a74972647060292181b5df2f5068c8f66475a4c95f3d49b040ddf0ca7a78a09a768578523f2f362d13a96dbfc2607fd9cf069db79feb2e35742cc724acf82f95cd511a631ff2a920907d828c494d23d6e85a81bbf852d34d03f143412938cabcdb6b5fc79f7f63ee237f3230269de68cc5c27791d2005eaabfcd1facba1f8096515e7cb4f18cb81575c4615740058b5466732beff790612fe1cee6bc2bdff46f16a365e6a755f5c1fddb21a438a4b8edcb829f57c56399b73051a9967f603300bdd59de236c1987b872c0f3029663b78a0bdfea5e0cbb0c9e116c1031e65b717e2c533a12285b7a458f0c4b2a50014d1c7c8ec3c22b0f74d3e150a94abd855aec9b144065e347a18465f294b90ff6807c9e7db60284ee7e7e05631434d5b44b35bad9c930a413f4de04e2cb7dba523befe1c1e0ffdeae3ca23a357c8813300bd20302e5950f6d5db56b8ae2aee62c8115371c48bb6f4ab36d2747ded614e47dc1429f9164ddc30104ea9970cacb229e6d63e5b533333e8593596e84f6378ae58a7f1de141c152855924cc068a21e3f68c44122f8abd5fe8bf43fa8f08ae47522a3a5d177a97ac1ed967dbc85f5befb80125a6bb78fe69bf884e8cac0c3feb9eb88d46d139b511a1992b7cee131d1a06173c05b9e1059fcda174ade4cf445b5741caa59836a30e75b79a111b6dcdce7d05e90c563ac6afbc7ad3db10ce3f300621d6ff7de971caf95f49f4a5987864360cb7d5418c4fd9b92907d84336de331a2f023a32910f51a91136abab85eec663d8942f6204fdcaafa70c158c86ff019aa6d53435b50aa973d929cb695d4a0b237f0a1945d04b7f2ac0d66652d305c6ff08d892fc0089981b139c99f5460fe6ac26461dde88a796bfe9298b1de757593fe59c554554a9e9c4974190bdc94d0ba29b687bb51591f42c125e66edb2651c1a4aff5b142958c3e9118bb0fd1514fe3a70dc531d0dbcb04d04892d1f21aea151d6ff17220eedc479eba1f838da3537de77971fe9cf5ba606450b7754bf6bf03dcc3008d9f6213c57ed0146f052b5bdbb5c599b1e8e5fac1e5f0571c907f0fc454165218535ba0f5a317c0ed4017be77182cc5726897de85ee7ca99eee021f9dc550497e832882236f1f70491492b506b42a046d5602c1b59c2e56a982a2ac73ce68138c002ce46f0958c703343830e15711a63f73eb5b61b68fc1d7a370e52540a3d22c96ba4f32b362fd29ea5d004e0c8fbe749c325efda6d8dccdd01110e33b423b21ba2a4901b191323785f6fe59bcfdf103eb2a19f785cd5f1b0dc6a764e0c462fa9aa007d814b58c9dcdba3b28da61f9b4a015c481658085399fc7b8414f3eaaf25380bf61a653fbd6d301f9980f0f4c9a6a657ce986e065fffd0ec0f743a35698486e36765040a3f5989495fae8e2d011bbc0d4cddb0ed0f890861ec993830c5283b71a56302ddfc05b2e2e16396c143b1e5266883a8939e92d72311f25df2b1c41faf8a82ce2cf8a90cd46947d2b52bbf03f1b5ec2465903bb37b2ce3d108f4ae99be7a8dbc4499083db295f7e768f2c4f72c0b664d3dfa8502160ac7cd530f499dbee1e0e1bf3e950ace565f482aa23e1c345184d8a08f054afce2bf8a8f291877d9234af4caa2b11cd1a23ff49d69ff03e5896b6ee9cd2b78cde99690ca3bb02c13b11efac7b50a51deabda039c085ba7c49fe508fdf4c435589a4a669bf3ebe00e3006e9581deca1b40f9166ef5d71bacf155e59ab088a07fdb28bd3c7fea7416f8615806223be155a862053eef1094d049da2aa5ab0185aab4ee7e0db1453"),
             0x2007ffff, 4, 0);
-			
+
 		consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0739bced3341885cf221cf22b5e91cdb0f5da3cb34da982167c4c900723c725a"));
+//        assert(consensus.hashGenesisBlock == uint256S("0x00078b6e9ca0592873fd6030bfaa237a3051c9c6775d2c8d3497f1bee896a4fa"));
+//        assert(genesis.hashMerkleRoot == uint256S("0x21a36313979029de20976f0cc6ea5988d1989280fd3a1f2f826673dbbb882524"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("abctoxyz.site", "dnsseed.testnet.abctoxyz.site")); // Commercium
-        vSeeds.push_back(CDNSSeedData("commercium.org", "testnet.explorer.commercium.org")); // Commercium
+        vSeeds.push_back(CDNSSeedData("test02.commercium.net", "test02.commercium.net")); // Commercium
+        vSeeds.push_back(CDNSSeedData("test01.commercium.net", "test01.commercium.net")); // Commercium
 
         // guarantees the first 2 characters, when base58 encoded, are "tm"
         base58Prefixes[PUBKEY_ADDRESS]     = {0x1D,0x25};
@@ -310,7 +309,7 @@ public:
 		checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (0, consensus.hashGenesisBlock),
-            1477774444,  // * UNIX timestamp of last checkpoint block
+            1546144639,  // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
                          //   (the tx=... number in the SetBestChain debug.log lines)
             715          //   total number of tx / (checkpoint block height / (24 * 24))
@@ -322,7 +321,7 @@ public:
             };
         assert(vFoundersRewardAddress.size() <= consensus.GetLastFoundersRewardBlockHeight());
 		
-		nStartMasternodePayments = 1520121600; //2018-03-04
+		nStartMasternodePayments = 1546144639; //2018-29-12
     }
 };
 static CTestNetParams testNetParams;
@@ -378,14 +377,14 @@ public:
         eh_epoch_2_startblock = 1;
 
     	genesis = CreateGenesisBlock(
-            1296688602,
-            uint256S("000000000000000000000000000000000000000000000000000000000000000c"),
-            ParseHex("0a8ede36c2a99253574258d60b5607d65d6f10bb9b8df93e5e51802620a2b1f503e22195"),
+            1546145182,
+            uint256S("00000000000000000000000000000000000000000000000000000000000027a9"),
+            ParseHex("020c8e7be26cbb01b013702a5c64b5296607048e63da513ead513c29d30f7f079fa2572d"),
             0x200f0f0f, 4, 0);
-			
+
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x047c30b7734dbad47335383f9997a5d5d8d5e4b46fd0f02f23ec4fca27651b41"));
+//        assert(consensus.hashGenesisBlock == uint256S("0x0003b244a6b5c08c189c4ea4e692b2d8f4d690148c32ec3ec4594e3516d11fd2"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.

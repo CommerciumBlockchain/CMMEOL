@@ -937,7 +937,7 @@ std::string PrivacyInfo()
 {
     return "\n" +
            FormatParagraph(strprintf(_("In order to ensure you are adequately protecting your privacy when using Commercium, please see <%s>."),
-                                     "https://commercium.org/support/security/")) + "\n";
+                                     "https://commercium.net/")) + "\n";
 }
 
 std::string LicenseInfo()

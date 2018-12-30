@@ -137,12 +137,12 @@ public:
         vSeeds.push_back(CDNSSeedData("seed02.commercium.net", "seed02.commercium.net")); //Commercium seed node
         vSeeds.push_back(CDNSSeedData("seed01.commercium.net", "seed01.commercium.net")); //Commercium seed node
 
-        // guarantees the first 2 characters, when base58 encoded, are "s1"
-        base58Prefixes[PUBKEY_ADDRESS]     = {0x1C,0x28};
-        // guarantees the first 2 characters, when base58 encoded, are "s3"
-        base58Prefixes[SCRIPT_ADDRESS]     = {0x1C,0x2D};
-        // the first character, when base58 encoded, is "5" or "K" or "L" (as in Bitcoin)
-        base58Prefixes[SECRET_KEY]         = {0x80};
+        // guarantees the first 2 characters, when base58 encoded, are "C"
+        base58Prefixes[PUBKEY_ADDRESS]     = {0x1C};
+        // guarantees the first 2 characters, when base58 encoded, are "a"
+        base58Prefixes[SCRIPT_ADDRESS]     = {0x33};
+        // the first character, when base58 encoded, is "M"
+        base58Prefixes[SECRET_KEY]         = {0x8C};
         // do not rely on these BIP32 prefixes; they are not specified and may change
         base58Prefixes[EXT_PUBLIC_KEY]     = {0x04,0x88,0xB2,0x1E};
         base58Prefixes[EXT_SECRET_KEY]     = {0x04,0x88,0xAD,0xE4};
@@ -178,31 +178,12 @@ public:
 
         // Founders reward script expects a vector of 2-of-3 multisig addresses
         vFoundersRewardAddress = {
-            "s3d27MhkBRt3ha2UuxhjXaYF4DCnttTMnL1", /* main-index: 0*/
-            "s3Wws6Mx3GHJkAe8QkNr4jhW28WU21Fp9gL", /* main-index: 1*/
-            "s3QD18CKEA9Cw4kgnssnmk4rbf9Y3rU1uWG", /* main-index: 2*/
-            "s3esoTmHdcXdDwCkoGSxC4YkfzBo1ySuher", /* main-index: 3*/
-            "s3Q8NwoBv4aq9RRvqjT3LqN9TQnZrS2RdcV", /* main-index: 4*/
-            "s3ix12RLstrzFEJKVsbLxCsPuUSjAqs3Bqp", /* main-index: 5*/
-            "s3bCvm5zDv9KYFwHxaZjz2eKecEnbdFz98f", /* main-index: 6*/
-            "s3UfvUuHahzTmYViL3KrGZeUPug69denBm3", /* main-index: 7*/
-            "s3gmzNUmttwDJbUcpmW4gxVqHf3J58fDKpp", /* main-index: 8*/
-            "s3YuWMW4Kpij7gW91WHLhjfi5Dwc7dKyPNn", /* main-index: 9*/
-            "s3k2MaTdZyFBqyndrHdCDFnET5atCdC4iod", /* main-index: 10*/
-            "s3YFHxL9euG89LMgPT5wGka4Ek8XVyw4FWG", /* main-index: 11*/
-            "s3TKKkNnvBXphdv4ce84UKePdssWLHGBe1A", /* main-index: 12*/
-            "s3PLrY7e7jzzAxnMY7A6GkjhkGc1CVkuEoi", /* main-index: 13*/
-            "s3Ug8VAGcUijwD6QMhyFcCYXQEFABaA9VFy", /* main-index: 14*/
-            "s3b4DAbbrTb4FPz3mHeyE89fUq6Liqg5vxX", /* main-index: 15*/
-            "s3cM379BTJyCe5yJC4jkPn6qJwpZaHK2kXb", /* main-index: 16*/
-            "s3TKWLar6bZEHppF4ZR1MbPuBfe33a1bHX9", /* main-index: 17*/
-            "s3UpY6Q3T3v3F7MEpNDnV3rTucLEJkkHR4q", /* main-index: 18*/
-            "s3eWx3DcwLiusTBfhWu6z7zM4TffaV1Ng9r", /* main-index: 19*/
+            "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj", /* main-index: 0*/
         };
         nPoolMaxTransactions = 3;
-        strSporkKey = "045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d";
+        strSporkKey = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";
 
-        strObfuscationPoolDummyAddress = "s1eQnJdoWDhKhxDrX8ev3aFjb1J6ZwXCxUT";
+        strObfuscationPoolDummyAddress = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";
         nStartMasternodePayments = 1523750400; //2018-04-15
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
         assert(vFoundersRewardAddress.size() <= consensus.GetLastFoundersRewardBlockHeight());

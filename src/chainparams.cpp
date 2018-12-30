@@ -137,9 +137,9 @@ public:
         vSeeds.push_back(CDNSSeedData("seed02.commercium.net", "seed02.commercium.net")); //Commercium seed node
         vSeeds.push_back(CDNSSeedData("seed01.commercium.net", "seed01.commercium.net")); //Commercium seed node
 
-        // guarantees the first 2 characters, when base58 encoded, are "C"
+        // guarantees the first character, when base58 encoded, is "C"
         base58Prefixes[PUBKEY_ADDRESS]     = {0x1C};
-        // guarantees the first 2 characters, when base58 encoded, are "a"
+        // the first character of MULTISIG, when base58 encoded, is "M"
         base58Prefixes[SCRIPT_ADDRESS]     = {0x33};
         // the first character, when base58 encoded, is "M"
         base58Prefixes[SECRET_KEY]         = {0x8C};
@@ -178,7 +178,7 @@ public:
 
         // Founders reward script expects a vector of 2-of-3 multisig addresses
         vFoundersRewardAddress = {
-            "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj", /* main-index: 0*/
+            "MsLp9tP6dDoagmqfzGwxFHBCLE5KGBp8RK", /* main-index: 0*/
         };
         nPoolMaxTransactions = 3;
         strSporkKey = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";

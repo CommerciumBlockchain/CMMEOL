@@ -2090,7 +2090,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
         return 0;
 
     if ( nHeight == 1 )
-        return(26522230 * COIN); // Premine allocation for redistribution and development
+        return(29522230 * COIN); // Premine allocation for redistribution and development
 
     // Subsidy is cut in half every 60 * 24 * 365 blocks which will occur approximately every year.
     nSubsidy >>= halvings;

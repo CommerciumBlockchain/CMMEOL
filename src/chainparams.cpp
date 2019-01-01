@@ -160,7 +160,7 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
@@ -184,7 +184,7 @@ public:
         strSporkKey = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";
 
         strObfuscationPoolDummyAddress = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";
-        nStartMasternodePayments = 1523750400; //2018-04-15
+        nStartMasternodePayments = 1546862400; //2019-01-07
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
         assert(vFoundersRewardAddress.size() <= consensus.GetLastFoundersRewardBlockHeight());
     }

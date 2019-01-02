@@ -160,7 +160,7 @@ public:
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
@@ -178,7 +178,9 @@ public:
 
         // Founders reward script expects a vector of 2-of-3 multisig addresses
         vFoundersRewardAddress = {
-            "MsLp9tP6dDoagmqfzGwxFHBCLE5KGBp8RK", /* main-index: 0*/
+            "MZMN4YjaYhnnDgMWLQVC93LuCPFJ51tBwT", /* main-index: 0*/
+            "MujoWRKHEy3ndn2V5JZrXhQSiy3huZPV8U", /* main-index: 1*/
+            "MqdZ2ji6rX2HsBXdt9WpES2RSaE7R6A5zF", /* main-index: 2*/
         };
         nPoolMaxTransactions = 3;
         strSporkKey = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";

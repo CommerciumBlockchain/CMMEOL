@@ -573,11 +573,11 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     if (strMode != "template")
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
-    if (vNodes.empty())
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Commercium is not connected!");
+//    if (vNodes.empty())
+//        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Commercium is not connected!");
 
-    if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Commercium is downloading blocks...");
+//    if (IsInitialBlockDownload())
+//        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Commercium is downloading blocks...");
 
     static unsigned int nTransactionsUpdatedLast;
 

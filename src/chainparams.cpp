@@ -96,11 +96,12 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_TESTDUMMY].nActivationHeight =
             Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_OVERWINTER].nProtocolVersion = 170007;
-        consensus.vUpgrades[Consensus::UPGRADE_OVERWINTER].nActivationHeight = 520000;
+        consensus.vUpgrades[Consensus::UPGRADE_OVERWINTER].nActivationHeight = 100;
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nProtocolVersion = 170008;
-        consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nActivationHeight = 520000;
+        consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nActivationHeight = 100;
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("000000000000000000000000000000000000000000000000000000e45718e6cb");
+        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000000767");
+
         /**
          * The message start string should be awesome! Ⓢ❤
          */
@@ -115,8 +116,8 @@ public:
         newTimeRule = 246600;
         eh_epoch_1 = eh200_9;
         eh_epoch_2 = eh200_9;
-        eh_epoch_1_endblock = 1;
-        eh_epoch_2_startblock = 1;
+        eh_epoch_1_endblock = 10000000;
+        eh_epoch_2_startblock = 10000001;
 
         nMasternodeCountDrift = 0;
 
@@ -165,14 +166,16 @@ public:
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = false;
-		fHeadersFirstSyncingActive = false;
+	fHeadersFirstSyncingActive = false;
+
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (0, consensus.hashGenesisBlock),
+          //  (0, consensus.hashGenesisBlock),
+	    (0, uint256S("0x00069418c278f4defdf27e431e82e35d640a6a95d9413bea1f80543c8eccb9a4")),
             1546139923,     // * UNIX timestamp of last checkpoint block
             0,              // * total number of transactions between genesis and last checkpoint
                             //   (the tx=... number in the SetBestChain debug.log lines)
-            1234            // * estimated number of transactions per day after checkpoint
+            0            // * estimated number of transactions per day after checkpoint
                             //   total number of tx / (checkpoint block height / (24 * 24))
         };
 
@@ -303,7 +306,7 @@ public:
             "t2UNzUUx8mWBCRYPRezvA363EYXyEpHokyi"
             };
         assert(vFoundersRewardAddress.size() <= consensus.GetLastFoundersRewardBlockHeight());
-		
+
 		nStartMasternodePayments = 1546144639; //2018-29-12
     }
 };

@@ -5,7 +5,7 @@
 PACKAGE_DIR="$@"
 mkdir ${PACKAGE_DIR}
 
-binaries=("commercium-cli" "commercium")
+binaries=("commercium-cli" "commerciumd")
 alllibs=()
 for binary in "${binaries[@]}";
 do

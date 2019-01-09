@@ -67,17 +67,17 @@ bool CMasternodeConfig::read(std::string& strErr)
         SplitHostPort(ip, port, hostname);
 
         if (NetworkIdFromCommandLine() == CBaseChainParams::MAIN) {
-            if (port != 16113) {
+            if (port != 2018) {
                 strErr = _("Invalid port detected in masternode.conf") + "\n" +
                          strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                         _("(must be 16113 for mainnet)");
+                         _("(must be 2018 for mainnet)");
                 streamConfig.close();
                 return false;
             }
-        } else if (port == 16113) {
+        } else if (port == 2018) {
             strErr = _("Invalid port detected in masternode.conf") + "\n" +
                      strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                     _("(16113 could be used only on mainnet)");
+                     _("(2018 could be used only on mainnet)");
             streamConfig.close();
             return false;
         }

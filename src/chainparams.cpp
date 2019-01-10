@@ -186,10 +186,10 @@ public:
             "MqdZ2ji6rX2HsBXdt9WpES2RSaE7R6A5zF", /* main-index: 2*/
         };
         nPoolMaxTransactions = 3;
-        strSporkKey = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";
+        strSporkKey = "03fdf4907810a9f5d9462a1ae09feee5ab205d32798b0ffcc379442021f84c5bbf";
 
         strObfuscationPoolDummyAddress = "CVM2U1RDmX7sezRgiYwSDxcLsHkYXLzAPj";
-        nStartMasternodePayments = 1546862400; //2019-01-07
+        nStartMasternodePayments = 1596862400; //2019-01-07
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
         assert(vFoundersRewardAddress.size() <= consensus.GetLastFoundersRewardBlockHeight());
     }

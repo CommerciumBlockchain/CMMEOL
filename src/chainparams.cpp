@@ -171,7 +171,7 @@ public:
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
           //  (0, consensus.hashGenesisBlock),
-	    (0, uint256S("0x00069418c278f4defdf27e431e82e35d640a6a95d9413bea1f80543c8eccb9a4")),
+	    (0, uint256S("0x00069418c278f4defdf27e431e82e35d640a6a95d9413bea1f80543c8eccb9a4"))
             (500, uint256S("0x0000026851a98e7cb0c299128145468728eaf5b056d1c7a8bee3efa794d153f2")),
             1547262827,     // * UNIX timestamp of last checkpoint block
             505,              // * total number of transactions between genesis and last checkpoint

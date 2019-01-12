@@ -2071,7 +2071,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
         return 0;
 
     if (nHeight == 1)
-        return 29522230 * COIN; // Premine allocation for redistribution and development
+        return 41522230 * COIN; // Premine allocation for redistribution and development
 
     CAmount nSubsidy = 8 * COIN;
 

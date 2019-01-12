@@ -100,8 +100,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nProtocolVersion = 170008;
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nActivationHeight = 100;
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000026851a98e7cb0c299128145468728eaf5b056d1c7a8bee3efa794d153f2");
-
+	consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000000767");
         /**
          * The message start string should be awesome! Ⓢ❤
          */

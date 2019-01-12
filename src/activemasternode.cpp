@@ -72,13 +72,13 @@ void CActiveMasternode::ManageStatus()
         LogPrintf("CActiveMasternode::ManageStatus() - Checking inbound connection to '%s'\n", service.ToString());
 
         if(NetworkIdFromCommandLine() == CBaseChainParams::MAIN) {
-            if(service.GetPort() != 2018) {
-                notCapableReason = strprintf("Invalid port: %u - only 2018 is supported on mainnet.", service.GetPort());
+            if(service.GetPort() != 2019) {
+                notCapableReason = strprintf("Invalid port: %u - only 2019 is supported on mainnet.", service.GetPort());
                 LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
                 return;
             }
-        } else if(service.GetPort() == 2018) {
-            notCapableReason = strprintf("Invalid port: %u - 2018 is only supported on mainnet.", service.GetPort());
+        } else if(service.GetPort() == 2019) {
+            notCapableReason = strprintf("Invalid port: %u - 2019 is only supported on mainnet.", service.GetPort());
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
         }
@@ -271,13 +271,13 @@ bool CActiveMasternode::Register(std::string strService, std::string strKeyMaste
     if (!Lookup(strService.c_str(), service, 0, false))
         return LogPrintf("Invalid address %s for masternode.", strService);
     if(NetworkIdFromCommandLine() == CBaseChainParams::MAIN) {
-        if (service.GetPort() != 2018) {
-            errorMessage = strprintf("Invalid port %u for masternode %s - only 2018 is supported on mainnet.", service.GetPort(), strService);
+        if (service.GetPort() != 2019) {
+            errorMessage = strprintf("Invalid port %u for masternode %s - only 2019 is supported on mainnet.", service.GetPort(), strService);
             LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
             return false;
         }
-    } else if (service.GetPort() == 2018) {
-        errorMessage = strprintf("Invalid port %u for masternode %s - 2018 is only supported on mainnet.", service.GetPort(), strService);
+    } else if (service.GetPort() == 2019) {
+        errorMessage = strprintf("Invalid port %u for masternode %s - 2019 is only supported on mainnet.", service.GetPort(), strService);
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
     }

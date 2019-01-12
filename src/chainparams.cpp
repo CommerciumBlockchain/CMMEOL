@@ -100,7 +100,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nProtocolVersion = 170008;
         consensus.vUpgrades[Consensus::UPGRADE_SAPLING].nActivationHeight = 100;
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000000767");
+        consensus.nMinimumChainWork = uint256S("0x0000026851a98e7cb0c299128145468728eaf5b056d1c7a8bee3efa794d153f2");
 
         /**
          * The message start string should be awesome! Ⓢ❤
@@ -110,7 +110,7 @@ public:
         pchMessageStart[2] = 0xa5;
         pchMessageStart[3] = 0x55;
         vAlertPubKey = ParseHex("04388fbebb11406e3760971a8f21d410009df52c3c14aa6856626fccd815da45e3d3e3cf323a2087692b1ead972cf6300731f1f8cd3617b8d739526f213dd9f138");
-        nDefaultPort = 2018;
+        nDefaultPort = 2019;
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
         newTimeRule = 246600;
@@ -172,10 +172,11 @@ public:
             boost::assign::map_list_of
           //  (0, consensus.hashGenesisBlock),
 	    (0, uint256S("0x00069418c278f4defdf27e431e82e35d640a6a95d9413bea1f80543c8eccb9a4")),
-            1546139923,     // * UNIX timestamp of last checkpoint block
-            0,              // * total number of transactions between genesis and last checkpoint
+            (500, uint256S("0x0000026851a98e7cb0c299128145468728eaf5b056d1c7a8bee3efa794d153f2")),
+            1547262827,     // * UNIX timestamp of last checkpoint block
+            505,              // * total number of transactions between genesis and last checkpoint
                             //   (the tx=... number in the SetBestChain debug.log lines)
-            0            // * estimated number of transactions per day after checkpoint
+            1222            // * estimated number of transactions per day after checkpoint
                             //   total number of tx / (checkpoint block height / (24 * 24))
         };
 
@@ -203,7 +204,7 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        strCurrencyUnits = "SNGT";
+        strCurrencyUnits = "CMMT";
         bip44CoinType = 1;
         consensus.fCoinbaseMustBeProtected = true;
         consensus.nSubsidySlowStartInterval = 8000;
@@ -238,7 +239,7 @@ public:
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0xbf;
         vAlertPubKey = ParseHex("044e7a1553392325c871c5ace5d6ad73501c66f4c185d6b0453cf45dec5a1322e705c672ac1a27ef7cdaf588c10effdf50ed5f95f85f2f54a5f6159fca394ed0c6");
-        nDefaultPort = 12018;
+        nDefaultPort = 22019;
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 1000;
         eh_epoch_1 = eh200_9;

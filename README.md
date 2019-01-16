@@ -25,8 +25,8 @@ cd CommerciumContinuum
 Review Dockerfile
 
 
-#### Masternode Setup
+#### Windows and Linux VPS Masternode Setup
 https://github.com/CommerciumBlockchain/masternode-scripts
 
-# Linux to Linux Masternode Setup
+#### Linux to Linux VPS Masternode Setup
 https://www.commercium.net/masternode_quick_lin_to_lin.html

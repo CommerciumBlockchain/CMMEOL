@@ -28,5 +28,5 @@ Review Dockerfile
 #### Masternode Setup
 https://github.com/CommerciumBlockchain/masternode-scripts
 
-#Linux to Linux Masternode Setup
+# Linux to Linux Masternode Setup
 https://www.commercium.net/masternode_quick_lin_to_lin.html

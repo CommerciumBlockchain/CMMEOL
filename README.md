@@ -29,4 +29,4 @@ Review Dockerfile
 https://github.com/CommerciumBlockchain/masternode-scripts
 
 #### Linux to Linux VPS Masternode Setup
-https://www.commercium.net/masternode_quick_lin_to_lin.html
+https://www.commercium.net/masternode-guide/

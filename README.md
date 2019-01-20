@@ -5,7 +5,7 @@ Commercium gradual transition platform
 - Algorithm: Equihash
 - Max Supply: 58 million CMM
 - Block Time: 60 Seconds
-- Block Reward: 8 CMM, 35% to Masternode 7.5% to Founders and Stake wallet.
+- Block Reward: 8 CMM, 30% to Masternode 7.5% to Founders and Stake wallet.
 ### Dependencies
 
 ```shell
